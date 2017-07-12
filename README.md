@@ -64,10 +64,10 @@ If you Selected a repo with Enter, then you have 3 options :
 
 ### Pull requests
 
-✅ : The pull request has been merged
-❌ : The pull request has been declined
-☑️ : The has x tasks to be resolved
-💬 : The has x comments
+- ✅ : The pull request has been merged
+- ❌ : The pull request has been declined
+- ☑️ : The has x tasks to be resolved
+- 💬 : The has x comments
 
 # License
 MIT © [Nicolas Boisvert](https://nboisvert.com)
