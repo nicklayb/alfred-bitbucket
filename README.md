@@ -1,5 +1,7 @@
 # alfred-bitbucket
 
+![alt text](alfred-bitbucket.gif)
+
 ## Installation
 
 ```
