@@ -1,6 +1,10 @@
 const fs = require('fs');
+const EXAMPLE_IDENTIFIER = '.example';
 
-const EXAMPLE_FILE_NAME = 'info.example.plist';
-const FILE_NAME = 'info.plist';
+const files = [
+    'info.example.plist'
+];
 
-fs.createReadStream(EXAMPLE_FILE_NAME).pipe(fs.createWriteStream(FILE_NAME));
+files.forEach(file => {
+    fs.createReadStream(file).pipe(fs.createWriteStream(file.replace(EXAMPLE_IDENTIFIER, '')));
+});
