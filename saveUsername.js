@@ -1,3 +1,4 @@
 const alfy = require('alfy');
+const setDefaultUsername = require('./config').setDefaultUsername;
 
-alfy.log(process.env.team);
+setDefaultUsername(alfy.input);
