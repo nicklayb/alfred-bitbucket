@@ -8,6 +8,8 @@
 npm install --global alfred-bitbucket
 ```
 
+When installing `alfred-bitbucket` an `info.plist` file is created. You will need to fill in your personnal info.
+
 ## Configuration
 
 ### Generate Bitbucket consumer
@@ -26,7 +28,7 @@ npm install --global alfred-bitbucket
 
 ### Register environment variables
 
-**IMPORTANT** If you want to PR, or share your workflow with someone, **don't forget to remove your credentials**.
+Since 1.0.3, `info.plist` file is git ignored and copied on installation from an example file. But keep ensuring that you don't push any personnal information.
 
 #### Through Alfred
 
@@ -51,15 +53,24 @@ npm install --global alfred-bitbucket
 
 ## Usage
 
+### `bit` command
 Open alfred and type `bit`. Select a team and you can :
+- **New** open bookmarked repostories
 - Enter to see the Team's projects
 - Cmd+Enter to open the Team's page
+- **New** Shift+Enter to mark a team/user as default
 
-If you Selected a team with Enter, repos will be shown then you can :
+
+### `repo` command
+
+If you set a default team with Shift+Enter on any team/user, this user we be load by default. If you selected a team using `bit` command it'll be loaded instead. Then you'll be able to do the following :
 - Enter to see repo's PRs, Issues and Forks.
 - Cmd+Enter to open the Repo's page
+- **New** Shift+Enter to bookmark or remove bookmarked repository
 
-If you Selected a repo with Enter, then you have 3 options :
+### **New** `marks` command
+
+Displays all the bookmarks you done with all the repo options :
 - Pull requests (Enter, to show the PRs, Cmd+Enter to open the PRs page)
 - Issues (Enter, to show the issues, Cmd+Enter to open the issues page)
 - Forks (Enter, to show the forks)
