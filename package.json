@@ -1,7 +1,10 @@
 {
     "name": "alfred-bitbucket",
-    "version": "1.1.2",
+    "version": "1.1.5",
     "description": "Workflow to get through your and your teams public / private repositories using OAuth2",
+    "keywords": [
+        "alfred", "bitbucket", "workflow", "oauth2", "afly"
+    ],
     "scripts": {
         "install": "node scripts/install.js",
         "postinstall": "alfy-init",
@@ -15,5 +18,13 @@
     "license": "MIT",
     "dependencies": {
         "alfy": "*"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nicklayb/alfred-bitbucket.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nicklayb/alfred-bitbucket/issues"
+    },
+    "homepage": "https://github.com/nicklayb/alfred-bitbucket#readme"
 }
