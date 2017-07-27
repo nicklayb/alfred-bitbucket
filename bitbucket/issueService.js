@@ -2,7 +2,7 @@ const alfy = require('alfy');
 const createService = require('../utils').createService;
 
 const url = (host) => {
-    return host + ['repositories', process.env.team, process.env.repo, 'issues'].join('/');
+    return host + ['repositories', process.env.repo, 'issues'].join('/');
 };
 
 const map = ({ title, reporter, kind, priority, links }) => ({
