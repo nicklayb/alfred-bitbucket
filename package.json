@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Workflow to get through your and your teams public / private repositories using OAuth2",
     "scripts": {
+        "install": "scripts/install.js",
         "postinstall": "alfy-init",
         "preuninstall": "alfy-cleanup"
     },
