@@ -4,7 +4,7 @@ const bitbucket = require('./bitbucket/core').bitbucket;
 const { clientId, secret } = process.env;
 
 const ACCESS_TOKEN = 'access_token';
-const GRANT_TYPE = 'client_creddentials'
+const GRANT_TYPE = 'client_credentials'
 const ALIVE_TIME = 216000;
 const URL = 'https://bitbucket.org/site/oauth2/access_token';
 
