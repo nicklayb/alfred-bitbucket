@@ -1244,19 +1244,13 @@
 	<dict>
 		<key>clientId</key>
 		<string></string>
-		<key>password</key>
-		<string></string>
 		<key>secret</key>
-		<string></string>
-		<key>username</key>
 		<string></string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>secret</string>
-		<string>password</string>
 		<string>clientId</string>
-		<string>username</string>
+		<string>secret</string>
 	</array>
 	<key>version</key>
 	<string>1.1.0</string>

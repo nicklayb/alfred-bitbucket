@@ -17,14 +17,15 @@ When installing `alfred-bitbucket` an `info.plist` file is created. You will nee
 1. Go to your personal **Bitbucket's settings**.
 2. Under **Access management**, click on **OAuth**
 3. At the bottom of the page you have a **Add consumer** button.
-4. Give it a name. Make sure to check the following **Read** access
+4. Check **This is a private consumer** to allow client_credentials grant type
+5. Give it a name. Make sure to check the following **Read** access
     - Account
     - Team membership
     - Repositories
     - Pull requests
     - Issues
-5. Save it
-6. Your new consumer should appear under the **OAuth consumers** section. Toggle it to see the **Key** and the **Secret**.
+6. Save it
+7. Your new consumer should appear under the **OAuth consumers** section. Toggle it to see the **Key** and the **Secret**.
 
 ### Register environment variables
 
@@ -36,8 +37,6 @@ Since 1.0.3, `info.plist` file is git ignored and copied on installation from an
 2. Open the Environment variable panel and fill the values
     - `clientId` : Consumer Key
     - `secret` : Consumer secret
-    - `username` : Bitbucket account username
-    - `password` : Bitbucket account password
 3. Save
 
 #### Through the `plist` file.
@@ -47,8 +46,6 @@ Since 1.0.3, `info.plist` file is git ignored and copied on installation from an
 3. Fille the values
     - `clientId` : Consumer Key
     - `secret` : Consumer secret
-    - `username` : Bitbucket account username
-    - `password` : Bitbucket account password
 4. Save
 
 ## Usage
