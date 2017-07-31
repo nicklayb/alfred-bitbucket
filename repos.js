@@ -3,6 +3,6 @@ const authenticate = require('./authenticate.js');
 
 authenticate().then(({ repoService }) => {
     repoService.load(alfy.input).then(({ values })=> {
-        alfy.output(repoService.map(values));
+        alfy.output(repoService.output(values));
     });
 });

@@ -1,14 +1,12 @@
 const alfy = require('alfy');
-const createService = require('../utils').createService;
-const getDefaultUsername = require('../config').getDefaultUsername;
+const { compareDate, createService } = require('../utils');
+const isDefault = require('../config').isDefault;
 
 const url = (host) => host + 'teams/';
 
 const map = ({ type, display_name, username }) => {
     const getIcon = () => {
         switch (type) {
-            case 'marks':
-                return '✨';
             case 'user':
                 return '👤';
             default:
@@ -17,7 +15,7 @@ const map = ({ type, display_name, username }) => {
     }
     const getTitle = () => [
         getIcon(),
-        ((username == getDefaultUsername())) ? '🌟' : '',
+        (isDefault(username)) ? '🌟' : '',
         display_name
     ].filter(emoji => !!emoji).join('');
     return {
@@ -27,4 +25,17 @@ const map = ({ type, display_name, username }) => {
     }
 };
 
-module.exports = createService(url, map);
+const isUserDefault = user => isDefault(user.username);
+const isMarks = user => user.type == 'marks';
+
+const sort = (first, second) => {
+    if (isUserDefault(first) && !isUserDefault(second)) {
+        return -1
+    }
+    if (!isUserDefault(first) && isUserDefault(second)) {
+        return 1;
+    }
+    return compareDate(first, second);
+}
+
+module.exports = createService(url, map, sort);
