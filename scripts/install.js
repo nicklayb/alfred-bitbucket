@@ -6,5 +6,8 @@ const files = [
 ];
 
 files.forEach(file => {
-    fs.createReadStream(file).pipe(fs.createWriteStream(file.replace(EXAMPLE_IDENTIFIER, '')));
+    const newFile = file.replace(EXAMPLE_IDENTIFIER, '');
+    fs.unlink(newFile, () => {
+        fs.createReadStream(file).pipe(fs.createWriteStream(newFile));
+    });
 });
