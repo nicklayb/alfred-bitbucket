@@ -7,8 +7,8 @@ authenticate().then(({ teamService, userService }) => {
     userService.load().then((result) => {
         let users = [result];
         teamService.load().then(({ values }) => {
-            users = users.concat(values);
-            alfy.output(teams.concat(teamService.output(users)));
+            users = teams.concat(teamService.output(users.concat(values)));
+            alfy.output(alfy.inputMatches(users, 'title'));
         });
     });
 });
