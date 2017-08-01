@@ -5,9 +5,7 @@ const DEFAULT_USERNAME = 'default_username';
 
 const config = () => alfy.config;
 
-const getBookmarks = () => {
-    return config().get(BOOKMARKS_KEY) || [];
-}
+const getBookmarks = () => config().get(BOOKMARKS_KEY) || [];
 
 const setBookmarks = (bookmarks) => {
     config().set(BOOKMARKS_KEY, bookmarks);
@@ -29,17 +27,11 @@ const removeBookmark = (bookmark) => {
 
 const isBookmarked = (bookmark) => getBookmarks().includes(bookmark);
 
-const toggleBookmark = (bookmark) => {
-    if (isBookmarked(bookmark)) {
-        removeBookmark(bookmark);
-    } else {
-        appendBookmark(bookmark);
-    }
-}
+const toggleBookmark = (bookmark) => (isBookmarked(bookmark)) ? removeBookmark(bookmark) : appendBookmark(bookmark);
 
-const getDefaultUsername = () => {
-    return config().get(DEFAULT_USERNAME) || null;
-}
+const getDefaultUsername = () => config().get(DEFAULT_USERNAME) || null;
+
+const isDefault = (username) => getDefaultUsername() === username;
 
 const setDefaultUsername = (username) => {
     config().set(DEFAULT_USERNAME, username);
@@ -49,6 +41,7 @@ const setDefaultUsername = (username) => {
 module.exports = {
     getBookmarks,
     isBookmarked,
+    isDefault,
     toggleBookmark,
     appendBookmark,
     getDefaultUsername,

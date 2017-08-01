@@ -1,5 +1,5 @@
 const alfy = require('alfy');
-const createService = require('../utils').createService;
+const { compareDate, createService } = require('../utils');
 const { getDefaultUsername, isBookmarked } = require('../config');
 
 process.env.team = process.env.team || getDefaultUsername();
@@ -23,4 +23,17 @@ const map = ({ has_issues, name, full_name, slug }) => {
     }
 };
 
-module.exports = createService(url, map);
+const isRepoBookmarked = repo => isBookmarked([team, repo.slug].join('/'));
+
+const sort = (first, second) => {
+    if (isRepoBookmarked(first) && !isRepoBookmarked(second)) {
+        return -1
+    }
+    if (!isRepoBookmarked(first) && isRepoBookmarked(second)) {
+        return 1;
+    }
+    return compareDate(first, second);
+}
+
+
+module.exports = createService(url, map, sort);

@@ -3,7 +3,11 @@
     "version": "1.2.1",
     "description": "Workflow to get through your and your teams public / private repositories using OAuth2",
     "keywords": [
-        "alfred", "bitbucket", "workflow", "oauth2", "afly"
+        "alfred",
+        "bitbucket",
+        "workflow",
+        "oauth2",
+        "afly"
     ],
     "scripts": {
         "install": "node scripts/install.js",
@@ -17,7 +21,8 @@
     },
     "license": "MIT",
     "dependencies": {
-        "alfy": "*"
+        "alfy": "*",
+        "moment": "^2.18.1"
     },
     "repository": {
         "type": "git",
