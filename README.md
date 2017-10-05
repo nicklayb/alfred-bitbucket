@@ -20,14 +20,14 @@ When installing `alfred-bitbucket`, an `alfred-bitbucket/info.plist` file is cre
 4. Check **This is a private consumer** to allow client_credentials grant type.
 5. Give it a name.
 6. In the `Callback URL` field you need to set a URL. This will **not** be used, but it is required in order to get an acces token. Any will do, just make sure it has `http://` or `https://` scheme. You can set it to `https://google.ca` or `https://github.com` or really anything.
-6. Make sure to check the following **Read** access.
+7. Make sure to check the following **Read** access.
     - Account
     - Team membership
     - Repositories
     - Pull requests
     - Issues
-7. Save it.
-8. Your new consumer should appear under the **OAuth consumers** section. Toggle it to see the **Key** and the **Secret**.
+8. Save it.
+9. Your new consumer should appear under the **OAuth consumers** section. Toggle it to see the **Key** and the **Secret**.
 
 ### Register environment variables
 
@@ -44,7 +44,7 @@ You can add the required keys either through Alfred `or` directly through the `p
 5. Fill the values
     - `clientId` : Consumer Key
     - `secret` : Consumer secret
-3. Save
+6. Save
 
 #### Through the `plist` file.
 
