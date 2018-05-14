@@ -1,4 +1,3 @@
-const alfy = require('alfy');
 const { compareDate, createService } = require('../utils');
 const isDefault = require('../config').isDefault;
 
@@ -12,7 +11,7 @@ const map = ({ type, display_name, username }) => {
             default:
                 return '👥';
         }
-    }
+    };
     const getTitle = () => [
         getIcon(),
         (isDefault(username)) ? '🌟' : '',
@@ -22,20 +21,19 @@ const map = ({ type, display_name, username }) => {
         title: getTitle(),
         subtitle: username,
         arg: username
-    }
+    };
 };
 
 const isUserDefault = user => isDefault(user.username);
-const isMarks = user => user.type == 'marks';
 
 const sort = (first, second) => {
     if (isUserDefault(first) && !isUserDefault(second)) {
-        return -1
+        return -1;
     }
     if (!isUserDefault(first) && isUserDefault(second)) {
         return 1;
     }
     return compareDate(first, second);
-}
+};
 
 module.exports = createService(url, map, sort);
