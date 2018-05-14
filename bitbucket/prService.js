@@ -1,4 +1,3 @@
-const alfy = require('alfy');
 const createService = require('../utils').createService;
 
 const url = (host) => {

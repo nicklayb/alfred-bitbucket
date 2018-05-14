@@ -8,7 +8,7 @@ const prService = require('./prService');
 const issueService = require('./issueService');
 const forkService = require('./forkService');
 
-const fetch = (url, token, query = '', options = {}) => {
+const fetch = (url, token, query = '') => {
     return alfy.fetch(url(bitbucketUrl), fetchOptions(token, query));
 };
 

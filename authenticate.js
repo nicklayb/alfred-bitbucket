@@ -4,7 +4,7 @@ const bitbucket = require('./bitbucket/core').bitbucket;
 const { clientId, secret } = process.env;
 
 const ACCESS_TOKEN = 'access_token';
-const GRANT_TYPE = 'client_credentials'
+const GRANT_TYPE = 'client_credentials';
 const ALIVE_TIME = 216000;
 const URL = 'https://bitbucket.org/site/oauth2/access_token';
 
@@ -18,7 +18,7 @@ const OPTIONS = {
 };
 
 const loginAttempt = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, _reject) => {
         if (!clientId || !secret) {
             alfy.error('OAuth2 not set. Refer to README for details');
         } else {
@@ -35,6 +35,6 @@ const loginAttempt = () => {
             }
         }
     });
-}
+};
 
 module.exports = loginAttempt;

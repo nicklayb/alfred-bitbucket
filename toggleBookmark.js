@@ -1,4 +1,4 @@
 const alfy = require('alfy');
-const { toggleBookmark, getBookmarks } = require('./config');
+const { toggleBookmark } = require('./config');
 
 toggleBookmark(alfy.input);

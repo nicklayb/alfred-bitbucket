@@ -2,7 +2,7 @@ const moment = require('moment');
 
 const fetchOptions = (token, query = '') => ({
     headers: {
-        Authorization: ('Bearer ' + token)
+        Authorization: `Bearer ${token}`
     },
     method: 'GET',
     query: {
@@ -37,7 +37,7 @@ const compareDate = (first, second, key = 'updated_at') => {
         return -1;
     }
     return 0;
-}
+};
 
 module.exports = {
     fetchOptions,
