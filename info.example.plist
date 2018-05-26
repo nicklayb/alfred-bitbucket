@@ -95,6 +95,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>7BF43387-8A6D-4472-9B94-B28A1277405E</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Copy repo url</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>7A7C3E4F-228C-4EAF-AB5C-64D8039859A4</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
@@ -350,6 +360,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>7BF43387-8A6D-4472-9B94-B28A1277405E</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Copy report url to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>7A7C3E4F-228C-4EAF-AB5C-64D8039859A4</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
@@ -414,6 +434,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -537,8 +559,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>git@bitbucket.org:{query}.git</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7BF43387-8A6D-4472-9B94-B28A1277405E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -640,6 +681,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -683,33 +726,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"Pull requests","arg":"pull-requests","subtitle":"Show pull requests"},{"title":"Issues","arg":"issues","subtitle":"Show issues"},{"title":"Forks","arg":"forks","subtitle":"Show forks"}]</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Action</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
-			<key>uid</key>
-			<string>90F65DE9-DB67-4B5C-9BED-90E4B3BECB43</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -748,6 +764,33 @@
 			<string>5466EDF2-55B7-4D7F-9D03-C294F67908A1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"Pull requests","arg":"pull-requests","subtitle":"Show pull requests"},{"title":"Issues","arg":"issues","subtitle":"Show issues"},{"title":"Forks","arg":"forks","subtitle":"Show forks"}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Action</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>90F65DE9-DB67-4B5C-9BED-90E4B3BECB43</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -809,6 +852,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -873,6 +918,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -974,6 +1021,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -1134,6 +1183,13 @@
 			<key>ypos</key>
 			<integer>320</integer>
 		</dict>
+		<key>7BF43387-8A6D-4472-9B94-B28A1277405E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>940</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
 		<key>7FE98086-2111-4206-82A4-9B609AFA6447</key>
 		<dict>
 			<key>xpos</key>
@@ -1253,8 +1309,8 @@
 		<string>secret</string>
 	</array>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.3.0</string>
 	<key>webaddress</key>
-	<string>nboisvert.com</string>
+	<string>https://github.com/nicklayb/alfred-bitbucket#readme</string>
 </dict>
 </plist>

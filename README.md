@@ -59,20 +59,20 @@ You can add the required keys either through Alfred `or` directly through the `p
 
 ### `bit` command
 Open Alfred and type `bit`. Select a team. Now you can :
-- **New** Open bookmarked repositories.
+- Open bookmarked repositories.
 - Enter to see the Team's projects.
 - Cmd+Enter to open the Team's web page.
-- **New** Shift+Enter to mark a team/user as default.
-
+- Shift+Enter to mark a team/user as default.
 
 ### `repo` command
 
 If you set a default team with Shift+Enter on any team/user, this user will be loaded by default. If you select a team using the `bit` command it'll be loaded instead. Then, you'll be able to do the following :
 - Enter to see repo's PRs, Issues and Forks.
 - Cmd+Enter to open the Repo's page.
-- **New** Shift+Enter to bookmark or remove a bookmarked repository.
+- Shift+Enter to bookmark or remove a bookmarked repository.
+- **New** Alt+Enter to copy repo's url to clipboard.
 
-### **New** `marks` command
+### `marks` command
 
 Displays all the bookmarks you made with all the repos options :
 - Pull requests (Enter, to show the PRs, Cmd+Enter to open the PRs web page).
