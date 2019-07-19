@@ -7,9 +7,10 @@ const repoService = require('./repoService');
 const prService = require('./prService');
 const issueService = require('./issueService');
 const forkService = require('./forkService');
+const pipelineService = require('./pipelineService');
 
-const fetch = (url, token, query = '') => {
-    return alfy.fetch(url(bitbucketUrl), fetchOptions(token, query));
+const fetch = (url, token, sort, query = '') => {
+    return alfy.fetch(url(bitbucketUrl), fetchOptions(token, query, sort));
 };
 
 module.exports = {
@@ -23,6 +24,7 @@ module.exports = {
             prService: prService(token, fetch),
             issueService: issueService(token, fetch),
             forkService: forkService(token, fetch),
+            pipelineService: pipelineService(token, fetch)
         };
     }
 };

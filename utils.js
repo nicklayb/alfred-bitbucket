@@ -1,20 +1,20 @@
 const moment = require('moment');
 
-const fetchOptions = (token, query = '') => ({
+const fetchOptions = (token, query = '', sort = '-updated_on') => ({
     headers: {
         Authorization: `Bearer ${token}`
     },
     method: 'GET',
     query: {
         q: (query) ? `name~"${query}"` : '',
-        sort: '-updated_on',
+        sort,
         role: 'member'
     }
 });
 
-const createService = (url, map, sort = null) => ((token, fetch) => ({
-    load(query) {
-        return fetch(url, token, query);
+const createService = (url, map, load, sort = null) => ((token, fetch) => ({
+    load(query, sort) {
+        return fetch(url, token, sort, query);
     },
     map(values) {
         return values.map(map);
