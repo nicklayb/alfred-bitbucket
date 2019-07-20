@@ -31,7 +31,7 @@ When installing `alfred-bitbucket`, an `alfred-bitbucket/info.plist` file is cre
 
 ### Register environment variables
 
-Since 1.0.3, `info.plist` file is git ignored and copied on installation from an example file. But keep ensuring that you don't push any personnal information.
+Since 1.0.3, `info.plist` file is git ignored and copied on installation from an example file. But keep ensuring that you don't push any personal information.
 
 You can add the required keys either through Alfred `or` directly through the `plist` file.
 
