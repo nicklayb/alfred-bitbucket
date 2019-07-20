@@ -29,4 +29,4 @@ const map = ({ build_number, created_on, repository, creator, state }) => {
 	}
 };
 
-module.exports = createService(url, map);
+module.exports = createService({ url, map });

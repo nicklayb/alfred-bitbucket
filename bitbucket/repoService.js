@@ -34,4 +34,4 @@ const sort = (first, second) => {
     return compareDate(first, second);
 };
 
-module.exports = createService(url, map, sort);
+module.exports = createService({ url, map, sort });

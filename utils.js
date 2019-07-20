@@ -1,20 +1,25 @@
 const moment = require('moment');
 
-const fetchOptions = (token, query = '', sort = '-updated_on') => ({
-    headers: {
-        Authorization: `Bearer ${token}`
-    },
-    method: 'GET',
-    query: {
-        q: (query) ? `name~"${query}"` : '',
-        sort,
-        role: 'member'
-    }
-});
+const fetchOptions = ({ token, query, maxAge = 0, sort = '-updated_on' }) => {
+    const maxAgeMillis = maxAge * 60 * 1000;
 
-const createService = (url, map, load, sort = null) => ((token, fetch) => ({
-    load(query, sort) {
-        return fetch(url, token, sort, query);
+    return {
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+        method: 'GET',
+        query: {
+            q: (query) ? `name~"${query}"` : '',
+            sort,
+            role: 'member'
+        },
+        maxAge: maxAgeMillis
+    }
+};
+
+const createService = ({ url, map, sort }) => ((token, fetch) => ({
+    load({ query, maxAge, sort }) {
+        return fetch({ url, token, maxAge, sort, query });
     },
     map(values) {
         return values.map(map);

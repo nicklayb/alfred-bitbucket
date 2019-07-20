@@ -9,8 +9,8 @@ const issueService = require('./issueService');
 const forkService = require('./forkService');
 const pipelineService = require('./pipelineService');
 
-const fetch = (url, token, sort, query = '') => {
-    return alfy.fetch(url(bitbucketUrl), fetchOptions(token, query, sort));
+const fetch = ({ url, token, maxAge, sort, query }) => {
+    return alfy.fetch(url(bitbucketUrl), fetchOptions({ token, maxAge, query, sort }));
 };
 
 module.exports = {
