@@ -92,5 +92,10 @@ Displays all the bookmarks you made with all the repos options :
 - ☑️ : The pull request has x tasks to be resolved.
 - 💬 : The pull request has x comments.
 
+### Pipelines
+
+- ✅ : The pipeline ran successfully.
+- ❌ : The pipeline failed.
+
 # License
 MIT © [Nicolas Boisvert](https://nboisvert.com)
