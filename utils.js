@@ -1,25 +1,32 @@
+const alfy = require('alfy');
 const moment = require('moment');
 
-const fetchOptions = ({ token, query, maxAge = 0, sort = '-updated_on' }) => {
+const fetchOptions = ({ token, query, maxAge = 0, sort = '-updated_on', fields }) => {
     const maxAgeMillis = maxAge * 60 * 1000;
+
+    const queryOptions = {
+        q: (query) ? `name~"${query}"` : '',
+        sort,
+        role: 'member'
+    };
+
+    if (fields) {
+        queryOptions.fields = fields;
+    }
 
     return {
         headers: {
             Authorization: `Bearer ${token}`
         },
         method: 'GET',
-        query: {
-            q: (query) ? `name~"${query}"` : '',
-            sort,
-            role: 'member'
-        },
+        query: queryOptions,
         maxAge: maxAgeMillis
     }
 };
 
 const createService = ({ url, map, sort }) => ((token, fetch) => ({
-    load({ query, maxAge, sort }) {
-        return fetch({ url, token, maxAge, sort, query });
+    load({ query, maxAge, sort, fields }) {
+        return fetch({ url, token, maxAge, sort, query, fields });
     },
     map(values) {
         return values.map(map);
