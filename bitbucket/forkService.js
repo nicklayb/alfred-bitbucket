@@ -10,4 +10,4 @@ const map = ({ name, owner, links }) => ({
     arg: links.html.href
 });
 
-module.exports = createService(url, map);
+module.exports = createService({ url, map });

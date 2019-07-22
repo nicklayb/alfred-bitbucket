@@ -28,4 +28,4 @@ const map = ({ title, author, task_count, links, comment_count, state }) => {
     };
 };
 
-module.exports = createService(url, map);
+module.exports = createService({ url, map });

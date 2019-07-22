@@ -31,7 +31,7 @@ When installing `alfred-bitbucket`, an `alfred-bitbucket/info.plist` file is cre
 
 ### Register environment variables
 
-Since 1.0.3, `info.plist` file is git ignored and copied on installation from an example file. But keep ensuring that you don't push any personnal information.
+Since 1.0.3, `info.plist` file is git ignored and copied on installation from an example file. But keep ensuring that you don't push any personal information.
 
 You can add the required keys either through Alfred `or` directly through the `plist` file.
 
@@ -44,6 +44,9 @@ You can add the required keys either through Alfred `or` directly through the `p
 5. Fill the values
     - `clientId` : Consumer Key
     - `secret` : Consumer secret
+    - `repoMaxAge`: Number of minutes list of repositories should be cached, defaults to 480
+    - `userMaxAge`: Number of minutes user information should be cached, defaults to 720
+    - `teamMaxAge`: Number of minutes list of teams should be cached, defaults to 720
 6. Save
 
 #### Through the `plist` file.
@@ -53,6 +56,9 @@ You can add the required keys either through Alfred `or` directly through the `p
 3. Fill the following values.
     - `clientId` : Consumer Key
     - `secret` : Consumer secret
+    - `repoMaxAge`: Number of minutes list of repositories should be cached, defaults to 480
+    - `userMaxAge`: Number of minutes user information should be cached, defaults to 720
+    - `teamMaxAge`: Number of minutes list of teams should be cached, defaults to 720
 4. Save.
 
 ## Usage
@@ -85,6 +91,11 @@ Displays all the bookmarks you made with all the repos options :
 - ❌ : The pull request has been declined.
 - ☑️ : The pull request has x tasks to be resolved.
 - 💬 : The pull request has x comments.
+
+### Pipelines
+
+- ✅ : The pipeline ran successfully.
+- ❌ : The pipeline failed.
 
 # License
 MIT © [Nicolas Boisvert](https://nboisvert.com)
