@@ -1,6 +1,6 @@
 {
     "name": "alfred-bitbucket",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Workflow to get through your and your teams public / private repositories using OAuth2",
     "keywords": [
         "alfred",
