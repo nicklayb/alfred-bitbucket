@@ -3,9 +3,9 @@ const authenticate = require('./authenticate.js');
 
 const teams = [{ title: '✨Bookmarks', subtitle: 'bookmarks', arg: 'bookmarks' }];
 
-// 12 hours.
-const userMaxAge = process.env.userMaxAge || 720;
-const teamMaxAge = process.env.teamMaxAge || 720;
+const TWELVE_HOURS_MINUTES = 720;
+const userMaxAge = process.env.userMaxAge || TWELVE_HOURS_MINUTES;
+const teamMaxAge = process.env.teamMaxAge || TWELVE_HOURS_MINUTES;
 
 authenticate().then(({ teamService, userService }) => {
     userService.load({ maxAge: userMaxAge }).then((result) => {
