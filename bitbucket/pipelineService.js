@@ -5,14 +5,22 @@ const url = (host) => {
     return host + ['repositories', process.env.repo, 'pipelines/'].join('/');
 };
 
-const map = ({ build_number, created_on, repository, creator, state, target }) => {
-    const getTitle = () => {
-        let emoji = '✅';
-        const commitMessage = target.commit.message;
+const RESULT_NAME = {
+    FAILED: 'FAILED'
+};
 
-        if (state.result && state.result.name === 'FAILED') {
-            emoji = '❌'
+const map = ({ build_number, created_on, repository, creator, state, target }) => {
+    const getEmoji = state => {
+        if (state.result && state.result.name === RESULT_NAME.FAILED) {
+            return '❌'
         }
+
+        return '✅';
+    };
+
+    const getTitle = () => {
+        const emoji = getEmoji(state);
+        const commitMessage = target.commit.message;
 
         return `${emoji}: ${commitMessage}`
     };
