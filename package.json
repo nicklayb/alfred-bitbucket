@@ -1,6 +1,6 @@
 {
     "name": "alfred-bitbucket",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "Workflow to get through your and your teams public / private repositories using OAuth2",
     "keywords": [
         "alfred",
@@ -21,7 +21,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "alfy": "0.6.0",
+        "alfy": "0.9.1",
         "moment": "^2.18.1"
     },
     "repository": {
