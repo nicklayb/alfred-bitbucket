@@ -27,7 +27,6 @@ const loginAttempt = () => {
             if (accessToken) {
                 resolve(bitbucket(accessToken));
             } else {
-                console.log({ OPTIONS })
                 alfy.fetch(URL, OPTIONS).then(({ access_token }) => {
                     alfy.cache.set(ACCESS_TOKEN, access_token, { maxAge: ALIVE_TIME });
                     resolve(bitbucket(access_token));
