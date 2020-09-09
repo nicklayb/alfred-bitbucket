@@ -32,7 +32,6 @@ async function getOAuthToken(clientId, secret) {
     }
 
     try {
-        // Request an access token from BitBucket using the OAuth2 flow
         const {access_token} = await alfy.fetch(URL, {
             auth: [clientId, secret].join(':'),
             json: true,
