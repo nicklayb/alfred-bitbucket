@@ -1414,11 +1414,11 @@
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>clientId</key>
+		<key>username</key>
 		<string></string>
 		<key>repoMaxAge</key>
 		<string></string>
-		<key>secret</key>
+		<key>appPassword</key>
 		<string></string>
 		<key>teamMaxAge</key>
 		<string></string>
@@ -1427,8 +1427,8 @@
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>clientId</string>
-		<string>secret</string>
+		<string>username</string>
+		<string>appPassword</string>
 	</array>
 	<key>version</key>
 	<string>1.3.0</string>
