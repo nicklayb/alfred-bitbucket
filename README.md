@@ -12,54 +12,28 @@ When installing `alfred-bitbucket`, an `alfred-bitbucket/info.plist` file is cre
 
 ## Configuration
 
-### Generate Bitbucket consumer
+### Generate Bitbucket App Password
 
-1. Go to your personal **Bitbucket's settings**.
-2. Under **Access management**, click on **OAuth**.
-3. At the bottom of the page, click the **Add consumer** button.
-4. Check **This is a private consumer** to allow client_credentials grant type.
-5. Give it a name.
-6. In the `Callback URL` field you need to set a URL. This will **not** be used, but it is required in order to get an acces token. Any will do, just make sure it has `http://` or `https://` scheme. You can set it to `https://google.ca` or `https://github.com` or really anything.
-7. Make sure to check the following **Read** access.
-    - Account
-    - Team membership
-    - Repositories
-    - Pull requests
-    - Issues
-8. Save it.
-9. Your new consumer should appear under the **OAuth consumers** section. Toggle it to see the **Key** and the **Secret**.
+1. Go to your personal [**Bitbucket's settings**](https://bitbucket.org/account/settings/app-passwords/).
+2. Click "Create app password"
+3. Give it a label, such as "AlfredBitBucket"
+4. Give it the relevant **Read** permissions
+5. Click "Create"
+6. Your app password should now appear. Make note of it as once you leave the page it's gone and you'll have to start the process over. 
 
 ### Register environment variables
-
-Since 1.0.3, `info.plist` file is git ignored and copied on installation from an example file. But keep ensuring that you don't push any personal information.
-
-You can add the required keys either through Alfred `or` directly through the `plist` file.
-
-#### Through Alfred
 
 1. Open Alfred Preferences.
 2. Go to the Workflows tab.
 3. Select BitBucket.
 4. Open the variables panel by clicking the `Configure workflow and variables` button on the right.
 5. Fill the values
-    - `clientId` : Consumer Key
-    - `secret` : Consumer secret
+    - `username`: Your BitBucket Username
+    - `appPasword`: The App password you generated boce
     - `repoMaxAge`: Number of minutes list of repositories should be cached, defaults to 480
     - `userMaxAge`: Number of minutes user information should be cached, defaults to 720
     - `teamMaxAge`: Number of minutes list of teams should be cached, defaults to 720
 6. Save
-
-#### Through the `plist` file.
-
-1. Open the `info.plist` file.
-2. Go down the file to the `variables` key.
-3. Fill the following values.
-    - `clientId` : Consumer Key
-    - `secret` : Consumer secret
-    - `repoMaxAge`: Number of minutes list of repositories should be cached, defaults to 480
-    - `userMaxAge`: Number of minutes user information should be cached, defaults to 720
-    - `teamMaxAge`: Number of minutes list of teams should be cached, defaults to 720
-4. Save.
 
 ## Usage
 
@@ -96,6 +70,15 @@ Displays all the bookmarks you made with all the repos options :
 
 - ✅ : The pipeline ran successfully.
 - ❌ : The pipeline failed.
+
+
+## OAuth2 Configuration (Deprecated)
+
+It is now preferred to configure alfred-bitbucket with App passwords, but if you need to configure it with OAuth, here are the old instructions: [Generate BitBucket Consumer](https://github.com/nicklayb/alfred-bitbucket/blob/5b3051f3b0d21da9ecff2bfc6105107cb387f11d/README.md#generate-bitbucket-consumer)
+
+## plist Configuration (Deprecated)
+
+It is now preferred to configure the alfred-bitbucket variables through the workflow preferences. If you need to configure directly through the plist, here are the old instructions: [Through the plist file](https://github.com/nicklayb/alfred-bitbucket/blob/5b3051f3b0d21da9ecff2bfc6105107cb387f11d/README.md#through-the-plist-file) 
 
 # License
 MIT © [Nicolas Boisvert](https://nboisvert.com)
