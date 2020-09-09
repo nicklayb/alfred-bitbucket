@@ -1,50 +1,57 @@
 const alfy = require('alfy');
 const bitbucket = require('./bitbucket/core').bitbucket;
 
-const {clientId, secret, appPassword, username} = process.env;
-
 const ACCESS_TOKEN = 'access_token';
 const GRANT_TYPE = 'client_credentials';
 const ALIVE_TIME = 216000;
 const URL = 'https://bitbucket.org/site/oauth2/access_token';
 
-const OPTIONS = {
-    auth: [clientId, secret].join(':'),
-    json: true,
-    method: 'POST',
-    body: {
-        grant_type: GRANT_TYPE
-    },
-    form: true
-};
+function getAppPasswordToken(username, password) {
+    return `Basic ${Buffer.from([username, password].join(':')).toString('base64')}`;
+}
 
-const loginAttempt = () => {
-    return new Promise((resolve, _reject) => {
-        if ((!username || !appPassword) && (!clientId || !secret)) {
-            return alfy.error('OAuth2 not set. Refer to README for details');
-        }
+async function getAuthToken(clientId, secret) {
+    const accessToken = alfy.cache.get(ACCESS_TOKEN);
 
-        if (username && appPassword) {
-            return resolve(bitbucket(`Basic ${Buffer.from([username, appPassword].join(':')).toString('base64')}`));
-        }
+    if (accessToken) {
+        return bitbucket(accessToken);
+    }
 
-        const accessToken = alfy.cache.get(ACCESS_TOKEN);
+    try {
+        const {access_token} = await alfy.fetch(URL, {
+            auth: [clientId, secret].join(':'),
+            json: true,
+            method: 'POST',
+            body: {
+                grant_type: GRANT_TYPE
+            },
+            form: true
+        });
+        const authToken = `Bearer ${access_token}`;
 
-        if (accessToken) {
-            return resolve(bitbucket(accessToken));
-        }
+        alfy.cache.set(ACCESS_TOKEN, authToken, {maxAge: ALIVE_TIME});
 
-        alfy.fetch(URL, OPTIONS)
-            .then(({access_token}) => {
-                const authToken = `Bearer ${access_token}`;
+        return authToken;
+    } catch (e) {
+        alfy.cache.set(ACCESS_TOKEN, null);
+    }
 
-                alfy.cache.set(ACCESS_TOKEN, authToken, {
-                    maxAge: ALIVE_TIME
-                });
-                resolve(bitbucket(authToken));
-            })
-            .catch(() => alfy.cache.set(ACCESS_TOKEN, null));
-    });
-};
+    return null;
+}
+
+async function loginAttempt() {
+    const {clientId, secret, appPassword, username} = process.env;
+
+    if ((!username || !appPassword) && (!clientId || !secret)) {
+        alfy.error('OAuth2 not set. Refer to README for details');
+        return null;
+    }
+
+    if (username && appPassword) {
+        return bitbucket(getAppPasswordToken(username, appPassword));
+    }
+
+    return bitbucket(await getAuthToken(clientId, secret));
+}
 
 module.exports = loginAttempt;
