@@ -16,7 +16,7 @@ const fetchOptions = ({ token, query, maxAge = 0, sort = '-updated_on', fields }
 
     return {
         headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: token
         },
         method: 'GET',
         query: queryOptions,
